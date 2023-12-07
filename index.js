@@ -2,9 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const cells = document.querySelectorAll(".cell");
   const restartButton = document.querySelector(".btnRestart");
 
-  let currentPlayer = "X";
+  let currentPlayer = "Ido";
   let gameBoard = ["", "", "", "", "", "", "", "", ""];
-  let turnCount = 0;
 
   cells.forEach((cell, index) => {
     cell.addEventListener("click", () => handleCellClick(index));
@@ -22,8 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("It's a draw!");
       } else {
         // Switch player for the next turn
-        currentPlayer = currentPlayer === "X" ? "O" : "X";
-        turnCount++;
+        currentPlayer = currentPlayer === "Ido" ? "David" : "Ido";
       }
     }
   }
@@ -34,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const image = document.createElement("img");
     image.classList.add("image");
-    image.src = currentPlayer === "X" ? "../assets/idoX.jpg" : "../assets/davidO.jpg";
+    image.src = currentPlayer === "Ido" ? "../assets/idoX.jpg" : "../assets/davidO.jpg";
     image.alt = currentPlayer;
 
     cell.appendChild(image);
@@ -75,11 +73,15 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function restartGame() {
-    currentPlayer = turnCount % 2 === 0 ? "X" : "O";
+    // Switch player for the next game
+    currentPlayer = currentPlayer === "Ido" ? "David" : "Ido";
+    
+    // Reset the game board
     gameBoard = ["", "", "", "", "", "", "", "", ""];
+    
+    // Clear the cells
     cells.forEach((cell) => {
       cell.innerHTML = "";
     });
-    turnCount = 0;
   }
 });

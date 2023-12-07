@@ -30,20 +30,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateCell(index) {
     const cell = cells[index];
-    cell.innerHTML = "";  // Clear existing content
+    cell.innerHTML = "";
 
-    // Create an img element
     const image = document.createElement("img");
-
     image.classList.add("image");
-
-    // Set the src attribute based on the current player
     image.src = currentPlayer === "X" ? "../assets/idoX.jpg" : "../assets/davidO.jpg";
-
-    // Set alt attribute to the current player
     image.alt = currentPlayer;
 
-    // Append the image to the cell
     cell.appendChild(image);
   }
 

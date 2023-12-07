@@ -105,9 +105,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function displayRules() {
-    alert("Tic Tac Toe Rules:\n\nThe game is played on a 3x3 grid. Each player takes turns marking a square with their symbol (X or O). The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game. If the board is full and no player has won, the game is a draw. Each move has a timeout of 30 seconds.");
+    alert("Welcome to Tic Tac Toe Battle!\n\nRules:\n1. Click on a cell to place your symbol (Ido or David).\n2. The first player to get three in a row wins!\n3. If the board is full and no one has three in a row, it's a draw.\n4. If no move in 30 seconds, you lose, and the opponent wins.\n\nLet the battle begin!!!!");
   }
-
+ 
   function getOpponent(player) {
     return player === "Ido" ? "David" : "Ido";
   }

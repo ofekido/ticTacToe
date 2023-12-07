@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const image = document.createElement("img");
     image.classList.add("image");
-    image.src = currentPlayer === "Ido" ? "../assets/idoX.jpg" : "../assets/davidO.jpg";
+    image.src = currentPlayer === "Ido" ? "/assets/idoX.jpg" : "/assets/davidO.jpg";
     image.alt = currentPlayer;
 
     cell.appendChild(image);

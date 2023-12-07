@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let currentPlayer = "Ido";
   let gameBoard = ["", "", "", "", "", "", "", "", ""];
+  let timeout;
 
   // Display rules when the page loads
   displayRules();
@@ -16,15 +17,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function handleCellClick(index) {
     if (gameBoard[index] === "" && !isGameOver()) {
+      clearTimeout(timeout); // Clear the previous timeout
+
       gameBoard[index] = currentPlayer;
       updateCell(index);
       if (checkWinner()) {
         alert(`${currentPlayer} is the winner!`);
+        restartGame();
       } else if (isBoardFull()) {
         alert("It's a draw!");
+        restartGame();
       } else {
         // Switch player for the next turn
         currentPlayer = currentPlayer === "Ido" ? "David" : "Ido";
+
+        // Set timeout for the next move
+        timeout = setTimeout(() => {
+          alert(`${currentPlayer} took too long! ${getOpponent(currentPlayer)} wins!`);
+          restartGame();
+        }, 30000);
       }
     }
   }
@@ -76,6 +87,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function restartGame() {
+    clearTimeout(timeout); // Clear the current timeout
+
     // Switch player for the next game
     currentPlayer = currentPlayer === "Ido" ? "David" : "Ido";
     
@@ -92,6 +105,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function displayRules() {
-    alert("Welcome to Tic Tac Toe Battle!\n\nRules:\n1. Click on a cell to place your symbol (Ido or David).\n2. The first player to get three in a row wins!\n3. If the board is full and no one has three in a row, it's a draw.\n\nLet the battle begin!!!!");
+    alert("Tic Tac Toe Rules:\n\nThe game is played on a 3x3 grid. Each player takes turns marking a square with their symbol (X or O). The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game. If the board is full and no player has won, the game is a draw. Each move has a timeout of 30 seconds.");
+  }
+
+  function getOpponent(player) {
+    return player === "Ido" ? "David" : "Ido";
   }
 });

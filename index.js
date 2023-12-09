@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const cells = document.querySelectorAll(".cell");
   const restartButton = document.querySelector(".btnRestart");
+  const playerTurnElement = document.querySelector(".player-turn");
 
   const PLAYER_IDO = "Ido";
   const PLAYER_DAVID = "David";
@@ -20,10 +21,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function handleCellClick(index) {
     if (gameBoard[index] === "" && !isGameOver()) {
-      clearTimeout(timeout);
+      clearTimeout(timeout); 
 
       gameBoard[index] = currentPlayer;
-      updateCell(index);
+      updateCell(index); 
 
       if (checkWinner()) {
         setTimeout(() => {
@@ -36,12 +37,18 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         currentPlayer = currentPlayer === PLAYER_IDO ? PLAYER_DAVID : PLAYER_IDO;
 
+        updatePlayerTurn();
+
         timeout = setTimeout(() => {
           alert(`${currentPlayer} took too long! ${getOpponent(currentPlayer)} wins!`);
           restartGame();
         }, TIMEOUT_DURATION);
       }
     }
+  }
+
+  function updatePlayerTurn() {
+    playerTurnElement.textContent = `${currentPlayer}'s turn`;
   }
 
   function updateCell(index) {
@@ -91,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function restartGame() {
-    clearTimeout(timeout);
+    clearTimeout(timeout); 
 
     currentPlayer = currentPlayer === PLAYER_IDO ? PLAYER_DAVID : PLAYER_IDO;
 
@@ -100,6 +107,8 @@ document.addEventListener("DOMContentLoaded", function () {
     cells.forEach((cell) => {
       cell.innerHTML = "";
     });
+
+    updatePlayerTurn();
 
     displayRules();
   }

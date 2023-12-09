@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const PLAYER_IDO = "Ido";
   const PLAYER_DAVID = "David";
-  const TIMEOUT_DURATION = 30000;
+  const TIMEOUT_DURATION = 10000; 
 
   let currentPlayer = PLAYER_IDO;
   let gameBoard = ["", "", "", "", "", "", "", "", ""];
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
         updatePlayerTurn();
 
         timeout = setTimeout(() => {
-          alert(`${currentPlayer} took too long! ${getOpponent(currentPlayer)} wins!`);
+          alert(`30 seconds have passed! ${getOpponent(currentPlayer)} is the winner!`);
           restartGame();
         }, TIMEOUT_DURATION);
       }

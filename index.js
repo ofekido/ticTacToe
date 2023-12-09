@@ -2,11 +2,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const cells = document.querySelectorAll(".cell");
   const restartButton = document.querySelector(".btnRestart");
 
-  let currentPlayer = "Ido";
+  const PLAYER_IDO = "Ido";
+  const PLAYER_DAVID = "David";
+  const TIMEOUT_DURATION = 30000;
+
+  let currentPlayer = PLAYER_IDO;
   let gameBoard = ["", "", "", "", "", "", "", "", ""];
   let timeout;
 
-  // Display rules when the page loads
   displayRules();
 
   cells.forEach((cell, index) => {
@@ -17,25 +20,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function handleCellClick(index) {
     if (gameBoard[index] === "" && !isGameOver()) {
-      clearTimeout(timeout); // Clear the previous timeout
+      clearTimeout(timeout);
 
       gameBoard[index] = currentPlayer;
       updateCell(index);
+
       if (checkWinner()) {
-        alert(`${currentPlayer} is the winner!`);
-        restartGame();
+        setTimeout(() => {
+          alert(`${currentPlayer} is the winner!`);
+          restartGame();
+        }, 100);
       } else if (isBoardFull()) {
         alert("It's a draw!");
         restartGame();
       } else {
-        // Switch player for the next turn
-        currentPlayer = currentPlayer === "Ido" ? "David" : "Ido";
+        currentPlayer = currentPlayer === PLAYER_IDO ? PLAYER_DAVID : PLAYER_IDO;
 
-        // Set timeout for the next move
         timeout = setTimeout(() => {
           alert(`${currentPlayer} took too long! ${getOpponent(currentPlayer)} wins!`);
           restartGame();
-        }, 30000);
+        }, TIMEOUT_DURATION);
       }
     }
   }
@@ -46,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const image = document.createElement("img");
     image.classList.add("image");
-    image.src = currentPlayer === "Ido" ? "assets/idoX.jpg" : "assets/davidO.jpg";
+    image.src = currentPlayer === PLAYER_IDO ? "assets/idoX.jpg" : "assets/davidO.jpg";
     image.alt = currentPlayer;
 
     cell.appendChild(image);
@@ -87,28 +91,24 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function restartGame() {
-    clearTimeout(timeout); // Clear the current timeout
+    clearTimeout(timeout);
 
-    // Switch player for the next game
-    currentPlayer = currentPlayer === "Ido" ? "David" : "Ido";
-    
-    // Reset the game board
+    currentPlayer = currentPlayer === PLAYER_IDO ? PLAYER_DAVID : PLAYER_IDO;
+
     gameBoard = ["", "", "", "", "", "", "", "", ""];
-    
-    // Clear the cells
+
     cells.forEach((cell) => {
       cell.innerHTML = "";
     });
 
-    // Display rules after restart
     displayRules();
   }
 
   function displayRules() {
     alert("Welcome to Tic Tac Toe Battle!\n\nRules:\n1. Click on a cell to place your symbol (Ido or David).\n2. The first player to get three in a row wins!\n3. If the board is full and no one has three in a row, it's a draw.\n4. If no move in 30 seconds, you lose, and the opponent wins.\n\nLet the battle begin!!!!");
   }
- 
+
   function getOpponent(player) {
-    return player === "Ido" ? "David" : "Ido";
+    return player === PLAYER_IDO ? PLAYER_DAVID : PLAYER_IDO;
   }
 });

@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const cells = document.querySelectorAll(".cell");
   const restartButton = document.querySelector(".btnRestart");
-  const playerTurnElement = document.querySelector(".player-turn");
+  const playerTurnElement = document.querySelector(".playerTurn");
 
   const PLAYER_IDO = "Ido";
   const PLAYER_DAVID = "David";

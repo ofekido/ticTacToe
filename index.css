@@ -77,6 +77,8 @@ body {
 
 .playerTurn{
     text-align: center;
-    font-size: 35px;
-    margin: 20px auto;
+    font-size: 25px;
+    margin: 10px auto;
+    font-family: 'Inknut Antiqua', serif;
 }
+

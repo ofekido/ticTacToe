@@ -114,10 +114,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function displayRules() {
-    alert("Welcome to Tic Tac Toe Battle!\n\nRules:\n1. Click on a cell to place your symbol (Ido or David).\n2. The first player to get three in a row wins!\n3. If the board is full and no one has three in a row, it's a draw.\n4. If no move in 30 seconds, you lose, and the opponent wins.\n\nLet the battle begin!!!!");
+    alert("Welcome to Tic Tac Toe Battle!\n\nRules:\n1. Click on a cell to place your symbol (Ido or David).\n2. The first player to get three in a row wins!\n3. If the board is full and no one has three in a row, it's a draw.\n4. After the first move, if there is no move within 30 seconds, you lose, and the opponent wins.\n\nLet the battle begin!!!!");
   }
 
   function getOpponent(player) {
     return player === PLAYER_IDO ? PLAYER_DAVID : PLAYER_IDO;
   }
 });
+
+

@@ -2,10 +2,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const cells = document.querySelectorAll(".cell");
   const restartButton = document.querySelector(".btnRestart");
   const playerTurnElement = document.querySelector(".playerTurn");
+  const countdownTimerElement = document.getElementById("countdownTimer");
 
   const PLAYER_IDO = "Ido";
   const PLAYER_DAVID = "David";
-  const TIMEOUT_DURATION = 10000; 
+  const TIMEOUT_DURATION = 30000;
 
   let currentPlayer = PLAYER_IDO;
   let gameBoard = ["", "", "", "", "", "", "", "", ""];
@@ -19,12 +20,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
   restartButton.addEventListener("click", restartGame);
 
+  function updateCountdownDisplay(seconds) {
+    countdownTimerElement.textContent = seconds;
+  }
+
+  function updatePlayerTurn() {
+    playerTurnElement.textContent = `${currentPlayer}'s turn`;
+  }
+
   function handleCellClick(index) {
     if (gameBoard[index] === "" && !isGameOver()) {
-      clearTimeout(timeout); 
+      clearTimeout(timeout);
 
       gameBoard[index] = currentPlayer;
-      updateCell(index); 
+      updateCell(index);
 
       if (checkWinner()) {
         setTimeout(() => {
@@ -39,16 +48,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         updatePlayerTurn();
 
-        timeout = setTimeout(() => {
-          alert(`30 seconds have passed! ${getOpponent(currentPlayer)} is the winner!`);
-          restartGame();
-        }, TIMEOUT_DURATION);
+        clearTimeout(timeout);
+        startCountdown();
       }
     }
-  }
-
-  function updatePlayerTurn() {
-    playerTurnElement.textContent = `${currentPlayer}'s turn`;
   }
 
   function updateCell(index) {
@@ -98,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function restartGame() {
-    clearTimeout(timeout); 
+    clearTimeout(timeout);
 
     currentPlayer = currentPlayer === PLAYER_IDO ? PLAYER_DAVID : PLAYER_IDO;
 
@@ -110,16 +113,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updatePlayerTurn();
 
+    startCountdown();
+
     displayRules();
   }
 
   function displayRules() {
-    alert("Welcome to Tic Tac Toe Battle!\n\nRules:\n1. Click on a cell to place your symbol (Ido or David).\n2. The first player to get three in a row wins!\n3. If the board is full and no one has three in a row, it's a draw.\n4. After the first move, if there is no move within 30 seconds, you lose, and the opponent wins.\n\nLet the battle begin!!!!");
+    alert("Welcome to Tic Tac Toe Battle!\n\nRules:\n1. Click on a cell to place your symbol (Ido or David).\n2. The first player to get three in a row wins!\n3. If the board is full and no one has three in a row, it's a draw.\n4. If there is no move within 30 seconds, you lose, and the opponent wins.\n\nLet the battle begin!!!!");
   }
+
 
   function getOpponent(player) {
     return player === PLAYER_IDO ? PLAYER_DAVID : PLAYER_IDO;
   }
+
+  function startCountdown() {
+    let secondsRemaining = TIMEOUT_DURATION / 1000;
+
+    function updateTimer() {
+      updateCountdownDisplay(secondsRemaining);
+      secondsRemaining--;
+
+      if (secondsRemaining < 0) {
+        alert(`30 seconds have passed! ${getOpponent(currentPlayer)} is the winner!`);
+        restartGame();
+      } else {
+        timeout = setTimeout(updateTimer, 1000);
+      }
+    }
+
+    updateTimer();
+  }
+
+  startCountdown();
 });
-
-

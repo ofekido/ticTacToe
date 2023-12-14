@@ -80,3 +80,8 @@ body {
     font-family: 'Inknut Antiqua', serif;
 }
 
+.countdown{
+  text-align: center;
+  font-size: 25px;
+  margin: 10px auto;
+}

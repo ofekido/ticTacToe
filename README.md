@@ -26,9 +26,7 @@ This game is designed with an Ido & David Edition twist.
 - [Installation](#installation)
 - [Contact](#Contact)
 - [How to Play](#how-to-play)
-- [Game Rules](#game-rules)
 - [Acknowledgments](#acknowledgments)
-- [License](#license)
 
 ## Introduction
 
@@ -49,11 +47,11 @@ Tic Tac Toe Battle is a simple yet challenging game where two players take turns
 
 ## Installation
 
-1. Clone the repository:
+- Clone the repository:
 
-   ```bash
-   git clone https://github.com/your-username/tic-tac-toe-battle.git
-   ```
+  ```bash
+  git clone https://github.com/your-username/tic-tac-toe-battle.git
+  ```
 
 ## Contact
 
@@ -69,3 +67,9 @@ Project Link: https://github.com/ofekido/ticTacToe.git
 2. The first player to get three in a row horizontally, vertically, or diagonally wins.
 3. If the board is full and no player has three in a row, it's a draw.
 4. If there is no move within 30 seconds, the opponent wins.
+
+## Acknowledgments
+
+In this project we did not use a particular library.
+
+We would like to thank for the opportunity to work with new languages + work in a team, with team members who each brought and will bring their individual abilities.

@@ -35,7 +35,6 @@ Tic Tac Toe Battle is a simple yet challenging game where two players take turns
 ## Features
 
 - Two-player turn-based gameplay.
-- Responsive design for a seamless experience on various devices.
 - Countdown timer to keep the game engaging.
 - Visual indicators for the current player's turn.
 - Winning combination detection.
@@ -53,3 +52,11 @@ Tic Tac Toe Battle is a simple yet challenging game where two players take turns
    ```bash
    git clone https://github.com/your-username/tic-tac-toe-battle.git
    ```
+
+## Contact
+
+Ido Ofek - Linkdin - https://www.linkedin.com/in/ido-ofek-a14603204/ -Email - ofekidodo@gmail.com
+
+David Marks - Email - dovidyl@gmail.com
+
+Project Link: https://github.com/ofekido/ticTacToe.git

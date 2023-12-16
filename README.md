@@ -62,3 +62,10 @@ Ido Ofek - Linkdin - https://www.linkedin.com/in/ido-ofek-a14603204/ -Email - of
 David Marks - Email - dovidyl@gmail.com
 
 Project Link: https://github.com/ofekido/ticTacToe.git
+
+## How to Play
+
+1. Click on a cell to place your symbol (Ido or David).
+2. The first player to get three in a row horizontally, vertically, or diagonally wins.
+3. If the board is full and no player has three in a row, it's a draw.
+4. If there is no move within 30 seconds, the opponent wins.

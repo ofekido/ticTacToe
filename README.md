@@ -15,6 +15,7 @@ Today the big decision will be made about the victory in the Tic Tac toe battle.
 Which of the opponents is going to win??
 
 Tic Tac Toe is an exciting game where you can engage in a battle of wits with your opponent!
+
 This game is designed with an Ido & David Edition twist.
 
 ## Table of Contents
@@ -23,6 +24,7 @@ This game is designed with an Ido & David Edition twist.
 - [Features](#features)
 - [Technologies](#technologies)
 - [Installation](#installation)
+- [Contact](#Contact)
 - [How to Play](#how-to-play)
 - [Game Rules](#game-rules)
 - [Acknowledgments](#acknowledgments)

@@ -50,7 +50,7 @@ Tic Tac Toe Battle is a simple yet challenging game where two players take turns
 - Clone the repository:
 
   ```bash
-  git clone https://github.com/your-username/tic-tac-toe-battle.git
+  git clone https://github.com/ofekido/ticTacToe.git
   ```
 
 ## Contact

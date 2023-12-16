@@ -1,22 +1,18 @@
 # Tic Tac Toe Battle
 
-Welcome to Tic Tac Toe Battle!!!!!!!!!
+Welcome to the thrilling Tic Tac Toe Battle!
 
-Throughout history, two great rivals stood and sought a decision in their great battle.
+Throughout history, two formidable rivals have clashed, seeking a decisive victory in their epic contest.
 
-From the days of the Olympics in ancient Greece,
-And to the Pok Ta Pok competitions of the ancient Mayan tribe.
+From the ancient Olympics in Greece to the Pok Ta Pok competitions of the Mayan tribe, these showdowns have always aimed to determine the ultimate winner and loser.
 
-These contests are for one purpose only, to determine who wins and who loses.
+Fast forward to the present day.
 
-Let's go back to the present day.
+Today, the momentous decision will be made to declare the victor in the Tic Tac Toe Battle. Which of the opponents will emerge triumphant?
 
-Today the big decision will be made about the victory in the Tic Tac toe battle.
-Which of the opponents is going to win??
+Tic Tac Toe is an exhilarating game that allows you to engage in a battle of wits with your adversary!
 
-Tic Tac Toe is an exciting game where you can engage in a battle of wits with your opponent!
-
-This game is designed with an Ido & David Edition twist.
+This game is crafted with an Ido & David Edition twist. Let the spirit and essence 
 
 ## Table of Contents
 
@@ -30,7 +26,7 @@ This game is designed with an Ido & David Edition twist.
 
 ## Introduction
 
-Tic Tac Toe Battle is a simple yet challenging game where two players take turns to mark a 3x3 grid with their respective symbols (Ido or David). The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.
+Tic Tac Toe Battle is a simple yet challenging game where two players take turns to mark a 3x3 grid with their respective symbols (Ido or David). The player who succeeds in placing three of their marks in a horizontal, vertical or diagonal row wins the game.
 
 ## Features
 
@@ -64,14 +60,12 @@ Project Link: https://github.com/ofekido/ticTacToe.git
 ## How to Play
 
 1. Click on a cell to place your symbol (Ido or David).
-2. The first player to get three in a row horizontally, vertically, or diagonally wins.
-3. If the board is full and no player has three in a row, it's a draw.
-4. If there is no move within 30 seconds, the opponent wins.
+2. The first player to place their mark in three cells in a row horizontally, vertically, or diagonally wins the game.
+3. In the event that all cells on the board are marked and no player has successfully achieved three in a row, the game concludes in a draw. 
+4. If neither player makes a move within 30 seconds, the opponent is declared the winner.
 
 ## Acknowledgments
 
-In this project we did not use a particular library.
-
-We would like to thank for the opportunity to work with new languages + work in a team, with team members who each brought and will bring their individual abilities.
+In this project, we didn't utilize any specific library. We're grateful for the chance to work with new languages and collaborate within a team where each member contributed their unique skills and abilities. Thank you for this opportunity.
 
 just check

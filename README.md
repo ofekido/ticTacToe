@@ -1,8 +1,21 @@
-# ticTacToe
-
 # Tic Tac Toe Battle
 
-Welcome to Tic Tac Toe Battle, an exciting game where you can engage in a battle of wits with your opponent! This game is designed with an Ido & David Edition twist.
+Welcome to Tic Tac Toe Battle!!!!!!!!!
+
+Throughout history, two great rivals stood and sought a decision in their great battle.
+
+From the days of the Olympics in ancient Greece,
+And to the Pok Ta Pok competitions of the ancient Mayan tribe.
+
+These contests are for one purpose only, to determine who wins and who loses.
+
+Let's go back to the present day.
+
+Today the big decision will be made about the victory in the Tic Tac toe battle.
+Which of the opponents is going to win??
+
+Tic Tac Toe is an exciting game where you can engage in a battle of wits with your opponent!
+This game is designed with an Ido & David Edition twist.
 
 ## Table of Contents
 

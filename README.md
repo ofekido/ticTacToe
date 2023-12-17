@@ -63,6 +63,8 @@ Project Link: https://github.com/ofekido/ticTacToe.git
 
 ## How to Play
 
+Game page: https://ofekido.github.io/ticTacToe/
+
 1. Click on a cell to place your symbol (Ido or David).
 2. The first player to get three in a row horizontally, vertically, or diagonally wins.
 3. If the board is full and no player has three in a row, it's a draw.
@@ -73,5 +75,3 @@ Project Link: https://github.com/ofekido/ticTacToe.git
 In this project we did not use a particular library.
 
 We would like to thank for the opportunity to work with new languages + work in a team, with team members who each brought and will bring their individual abilities.
-
-just check

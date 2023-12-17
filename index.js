@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () { //Listens for the HTML document to be fully loaded before executing the game initialization logic.
   const cells = document.querySelectorAll(".cell");
   const restartButton = document.querySelector(".btnRestart");
   const playerTurnElement = document.querySelector(".playerTurn");
@@ -23,10 +23,13 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateCountdownDisplay(seconds) {
     countdownTimerElement.textContent = seconds;
   }
+  //Updates the countdown timer display on the webpage with the provided number of seconds.
+
 
   function updatePlayerTurn() {
     playerTurnElement.textContent = `${currentPlayer}'s turn`;
   }
+  //Updates the display to indicate whose turn it is.
 
   function handleCellClick(index) {
     if (gameBoard[index] === "" && !isGameOver()) {
@@ -53,6 +56,9 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   }
+  //Handles the cell click event.
+  //Checks if the cell is empty, checks for a result.
+
 
   function updateCell(index) {
     const cell = cells[index];
@@ -65,6 +71,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     cell.appendChild(image);
   }
+  //Updates the content of a cell based on the current player.
+
 
   function checkWinner() {
     const winningCombinations = [
@@ -91,6 +99,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     return false;
   }
+  //Checks if the current player has won the game by examining the game board for winning combinations.
+
 
   function isBoardFull() {
     return !gameBoard.includes("");
@@ -110,6 +120,9 @@ document.addEventListener("DOMContentLoaded", function () {
     cells.forEach((cell) => {
       cell.innerHTML = "";
     });
+
+    //Resets the game state, including the game board and the content displayed in the cells.
+    //And starts all the rules of the game to the state where we defined them in the rules.
 
     updatePlayerTurn();
 
@@ -138,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
         alert(`30 seconds have passed! ${getOpponent(currentPlayer)} is the winner!`);
         restartGame();
       } else {
-        timeout = setTimeout(updateTimer, 1000);
+        timeout = setTimeout(updateTimer, 1000);//frequency of the timer updates
       }
     }
 
@@ -147,3 +160,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   startCountdown();
 });
+//Initiates a countdown timer with a duration of 30 seconds.
+//Updates the timer display every second.
+//Declares the opponent as the winner if the timer reaches zero and restarts the game.
